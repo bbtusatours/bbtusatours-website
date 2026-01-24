@@ -1,0 +1,1436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BBT USA | Premium Private Tours in Los Angeles</title>
+    <meta name="description" content="Luxury private tours, airport transfers, and custom travel experiences across the USA. TCP Licensed & Fully Insured." />
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Noto+Serif+KR:wght@400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-black: #0F0F0F;
+            --charcoal: #1C1C1C;
+            --soft-gold: #C6A96A;
+            --off-white: #F6F6F6;
+            --text-gray: #666666;
+            --white: #FFFFFF;
+        }
+
+        body {
+            font-family: 'Inter', 'Noto Sans KR', sans-serif;
+            background-color: var(--off-white);
+            color: var(--charcoal);
+            line-height: 1.6;
+        }
+
+        body.is-kr {
+            font-family: 'Noto Sans KR', 'Inter', sans-serif;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', 'Noto Serif KR', serif;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+
+        body.is-kr h1,
+        body.is-kr h2,
+        body.is-kr h3,
+        body.is-kr h4,
+        body.is-kr h5,
+        body.is-kr h6 {
+            font-family: 'Noto Serif KR', 'Playfair Display', serif;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--primary-black);
+            text-decoration: none;
+        }
+
+        .logo-subtitle {
+            display: block;
+            font-size: 11px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            letter-spacing: 1.5px;
+            color: var(--text-gray);
+            margin-top: -3px;
+        }
+
+        .nav-links {
+            display: none;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--charcoal);
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--soft-gold);
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .lang-switch {
+            background: none;
+            border: 1px solid var(--charcoal);
+            padding: 5px 12px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .lang-switch:hover {
+            background-color: var(--soft-gold);
+            border-color: var(--soft-gold);
+            color: var(--white);
+        }
+
+        .mobile-menu-btn {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--charcoal);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-black) 0%, var(--charcoal) 100%);
+            color: var(--white);
+            padding: 150px 20px 100px;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 15px;
+            color: var(--white);
+        }
+
+        .hero-subtitle {
+            font-size: 20px;
+            margin-bottom: 30px;
+            color: var(--off-white);
+            font-weight: 300;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--soft-gold);
+            color: var(--white);
+            padding: 15px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            background-color: #B89858;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(198, 169, 106, 0.3);
+        }
+
+        /* Trust Line */
+        .trust-line {
+            background-color: var(--white);
+            padding: 40px 20px;
+        }
+
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .trust-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .trust-icon {
+            font-size: 32px;
+            margin-bottom: 10px;
+            color: var(--soft-gold);
+        }
+
+        .trust-item h4 {
+            font-size: 14px;
+            font-family: 'Inter', 'Noto Sans KR', sans-serif;
+            font-weight: 600;
+            color: var(--charcoal);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 80px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 40px;
+            margin-bottom: 50px;
+            color: var(--primary-black);
+        }
+
+        .section-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 60px;
+            font-size: 18px;
+            line-height: 1.8;
+            color: var(--text-gray);
+        }
+
+        /* Service Cards */
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 40px 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 25px rgba(0,0,0,0.12);
+        }
+
+        .service-card h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: var(--primary-black);
+        }
+
+        .service-card p {
+            color: var(--text-gray);
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        .service-destinations {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #E0E0E0;
+        }
+
+        .service-destinations ul {
+            list-style: none;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .service-destinations li {
+            font-size: 14px;
+            color: var(--text-gray);
+            padding-left: 15px;
+            position: relative;
+        }
+
+        .service-destinations li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--soft-gold);
+        }
+
+        /* Destination Cards */
+        .destination-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .destination-card {
+            position: relative;
+            height: 300px;
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: pointer;
+            background: linear-gradient(135deg, var(--charcoal) 0%, var(--primary-black) 100%);
+        }
+
+        .destination-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 60%);
+        }
+
+        .destination-name {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            z-index: 1;
+            color: var(--white);
+            font-size: 26px;
+            font-weight: 600;
+        }
+
+        /* Pricing Cards */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .pricing-card {
+            background: var(--white);
+            padding: 40px 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+
+        .pricing-card h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: var(--primary-black);
+        }
+
+        .price {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--soft-gold);
+            margin: 20px 0;
+        }
+
+        .price-note {
+            font-size: 14px;
+            color: var(--text-gray);
+            margin-bottom: 25px;
+        }
+
+        .included-list {
+            text-align: left;
+            margin: 30px 0;
+        }
+
+        .included-list h4 {
+            font-size: 16px;
+            font-family: 'Inter', 'Noto Sans KR', sans-serif;
+            margin-bottom: 10px;
+            color: var(--primary-black);
+        }
+
+        .included-list ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .included-list li {
+            padding: 8px 0 8px 20px;
+            position: relative;
+            font-size: 14px;
+            color: var(--text-gray);
+        }
+
+        .included-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--soft-gold);
+            font-weight: bold;
+        }
+
+        .not-included li:before {
+            content: "✗";
+        }
+
+        /* FAQ Section */
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--white);
+            margin-bottom: 15px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 20px 25px;
+            background: none;
+            border: none;
+            text-align: left;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--primary-black);
+            font-family: 'Playfair Display', 'Noto Serif KR', serif;
+        }
+
+        body.is-kr .faq-question {
+            font-family: 'Noto Serif KR', serif;
+        }
+
+        .faq-question:hover {
+            color: var(--soft-gold);
+        }
+
+        .faq-answer {
+            padding: 0 25px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s, padding 0.3s;
+            color: var(--text-gray);
+            line-height: 1.8;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding: 0 25px 20px;
+        }
+
+        .faq-icon {
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        /* Contact Form */
+        .contact-form {
+            max-width: 700px;
+            margin: 40px auto;
+            background: var(--white);
+            padding: 50px;
+            border-radius: 8px;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--charcoal);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #DDDDDD;
+            border-radius: 5px;
+            font-size: 15px;
+            font-family: 'Inter', 'Noto Sans KR', sans-serif;
+            transition: border-color 0.3s;
+        }
+
+        .form-group select,
+        .form-group input[type="date"],
+        .form-group input[type="time"] {
+            appearance: auto;
+            -moz-appearance: auto;
+            -webkit-appearance: auto;
+            background-color: var(--white);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--soft-gold);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            background-color: var(--soft-gold);
+            color: var(--white);
+            border: none;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .submit-btn:hover {
+            background-color: #B89858;
+            transform: translateY(-2px);
+        }
+
+        /* Floating Action Buttons */
+        .floating-buttons {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            z-index: 999;
+        }
+
+        .float-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s;
+        }
+
+        .float-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        .kakao-btn {
+            background-color: #FEE500;
+            color: #3C1E1E;
+        }
+
+        .text-btn {
+            background-color: var(--soft-gold);
+            color: var(--white);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-black);
+            color: var(--off-white);
+            padding: 60px 20px 30px;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--white);
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--off-white);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--soft-gold);
+        }
+
+        .footer-note {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 14px;
+            color: var(--text-gray);
+        }
+
+        /* Hidden Content for Language Switching */
+        .lang-en { display: block; }
+        .lang-kr { display: none; }
+
+        body.is-kr .lang-en { display: none; }
+        body.is-kr .lang-kr { display: block; }
+
+        /* Responsive Design */
+        @media (min-width: 768px) {
+            .nav-links {
+                display: flex;
+            }
+
+            .mobile-menu-btn {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 64px;
+            }
+
+            .hero-subtitle {
+                font-size: 24px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .logo {
+                font-size: 22px;
+            }
+
+            .logo-subtitle {
+                font-size: 9px;
+            }
+
+            .hero {
+                padding: 120px 20px 80px;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero-subtitle {
+                font-size: 16px;
+            }
+
+            section {
+                padding: 60px 20px;
+            }
+
+            .section-title {
+                font-size: 32px;
+            }
+
+            .contact-form {
+                padding: 30px 20px;
+            }
+
+            .service-grid,
+            .destination-grid,
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Quote Note */
+        .quote-note {
+            text-align: center;
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 30px;
+            background: var(--white);
+            border-left: 4px solid var(--soft-gold);
+            border-radius: 5px;
+        }
+
+        .quote-note p {
+            font-size: 16px;
+            color: var(--charcoal);
+            font-style: italic;
+            line-height: 1.8;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="#home" class="logo">
+                BBT USA
+                <span class="logo-subtitle">PREMIUM PRIVATE TOURS</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link" data-en="Home" data-kr="홈">Home</a></li>
+                <li><a href="#services" class="nav-link" data-en="Services" data-kr="서비스">Services</a></li>
+                <li><a href="#destinations" class="nav-link" data-en="Destinations" data-kr="목적지">Destinations</a></li>
+                <li><a href="#pricing" class="nav-link" data-en="Pricing" data-kr="요금">Pricing</a></li>
+                <li><a href="#faq" class="nav-link" data-en="FAQ" data-kr="FAQ">FAQ</a></li>
+                <li><a href="#contact" class="nav-link" data-en="Contact" data-kr="문의">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="lang-switch" onclick="toggleLanguage()">
+                    <span class="lang-en">KR</span>
+                    <span class="lang-kr">EN</span>
+                </button>
+                <button class="mobile-menu-btn">☰</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>
+                <span class="lang-en">BBT USA</span>
+                <span class="lang-kr">BBT USA</span>
+            </h1>
+            <p class="hero-subtitle lang-en">Premium Private Tours & Airport Transfers<br>Tailor-Made Journeys · Total Privacy · Luxury Comfort</p>
+            <p class="hero-subtitle lang-kr">프리미엄 프라이빗 투어 & 공항 이동<br>맞춤 설계 · 철저한 프라이버시 · 품격 있는 여정</p>
+            <a href="#contact" class="cta-button">
+                <span class="lang-en">Request a Quote</span>
+                <span class="lang-kr">견적 문의하기</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Trust Line -->
+    <section class="trust-line">
+        <div class="container">
+            <div class="trust-grid">
+                <div class="trust-item">
+                    <div class="trust-icon">✓</div>
+                    <h4 class="lang-en">TCP Licensed & Fully Insured</h4>
+                    <h4 class="lang-kr">주정부 TCP 라이선스 & 상업 보험</h4>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-icon">👔</div>
+                    <h4 class="lang-en">Professional Chauffeur</h4>
+                    <h4 class="lang-kr">전문 기사 서비스</h4>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-icon">🚙</div>
+                    <h4 class="lang-en">Private SUV · Cadillac Escalade Available</h4>
+                    <h4 class="lang-kr">프라이빗 SUV · 캐딜락 에스컬레이드 가능</h4>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-icon">💬</div>
+                    <h4 class="lang-en">English & Korean Support</h4>
+                    <h4 class="lang-kr">영어 · 한국어 상담 가능</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Intro Section -->
+    <section>
+        <div class="container">
+            <p class="section-intro lang-en">
+                BBT USA provides premium private transportation and customized travel experiences.
+                From airport transfers to multi-day journeys, pilgrimage tours, cruises, and sports travel,
+                every trip is designed around your needs.
+            </p>
+            <p class="section-intro lang-kr">
+                BBT USA는 공항 픽업부터 장거리 여행, 성지순례, 크루즈, 스포츠 투어까지
+                고객 한 분 한 분을 위한 프리미엄 맞춤 여행 서비스를 제공합니다.
+            </p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="lang-en">Our Services</span>
+                <span class="lang-kr">서비스</span>
+            </h2>
+            
+            <div class="service-grid">
+                <!-- Airport Transfer -->
+                <div class="service-card">
+                    <h3 class="lang-en">Airport Transfer</h3>
+                    <h3 class="lang-kr">공항 이동</h3>
+                    <p class="lang-en">Reliable airport pickup and drop-off services at LAX, BUR, LGB, and SNA. Flight tracking included. Fixed-rate or hourly options available.</p>
+                    <p class="lang-kr">LAX, BUR, LGB, SNA 공항 픽업 및 드랍 서비스. 항공편 실시간 추적 포함, 고정요금 또는 시간제 선택 가능.</p>
+                </div>
+
+                <!-- Day Tours -->
+                <div class="service-card">
+                    <h3 class="lang-en">Day Tours</h3>
+                    <h3 class="lang-kr">일일 관광</h3>
+                    <p class="lang-en">Flexible private day tours tailored to your interests.</p>
+                    <p class="lang-kr">고객 취향에 맞춰 자유롭게 구성되는 프라이빗 일일관광.</p>
+                    <div class="service-destinations">
+                        <ul>
+                            <li>Los Angeles</li>
+                            <li>San Diego</li>
+                            <li>Palm Springs</li>
+                            <li>Santa Barbara</li>
+                            <li>Solvang</li>
+                            <li>Joshua Tree</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Multi-Day Trips -->
+                <div class="service-card">
+                    <h3 class="lang-en">Multi-Day Trips</h3>
+                    <h3 class="lang-kr">장거리 여행</h3>
+                    <p class="lang-en">Private multi-day trips with carefully planned routes and schedules.</p>
+                    <p class="lang-kr">숙박, 이동, 일정까지 포함한 장거리 프라이빗 여행.</p>
+                    <div class="service-destinations">
+                        <ul>
+                            <li>San Francisco</li>
+                            <li>Yosemite</li>
+                            <li>Las Vegas</li>
+                            <li>Grand Canyon</li>
+                            <li>Winery Tours</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Pilgrimage Tours -->
+                <div class="service-card">
+                    <h3 class="lang-en">Pilgrimage Tours</h3>
+                    <h3 class="lang-kr">성지순례</h3>
+                    <p class="lang-en">Faith-centered pilgrimage tours focused on prayer, reflection, and meaningful travel.</p>
+                    <p class="lang-kr">미사 · 기도 · 묵상을 중심으로 한 천주교 성지순례 맞춤 여행.</p>
+                </div>
+
+                <!-- Cruise Services -->
+                <div class="service-card">
+                    <h3 class="lang-en">Cruise Services</h3>
+                    <h3 class="lang-kr">크루즈</h3>
+                    <p class="lang-en">Cruise planning and transportation including port transfers and pre/post cruise travel.</p>
+                    <p class="lang-kr">크루즈 일정 설계 및 항구 픽업, 전후 일정 연계 서비스.</p>
+                </div>
+
+                <!-- Sports Tours -->
+                <div class="service-card">
+                    <h3 class="lang-en">Sports Tours</h3>
+                    <h3 class="lang-kr">스포츠 투어</h3>
+                    <p class="lang-en">Transportation and travel planning for soccer, basketball, and baseball events.</p>
+                    <p class="lang-kr">축구 · 농구 · 야구 경기 관람을 포함한 스포츠 투어.</p>
+                </div>
+
+                <!-- Custom Tours -->
+                <div class="service-card">
+                    <h3 class="lang-en">Custom Tours</h3>
+                    <h3 class="lang-kr">맞춤 투어</h3>
+                    <p class="lang-en">Tell us what you want. We design the rest.</p>
+                    <p class="lang-kr">원하시는 내용을 말씀해 주세요. BBT USA가 여정을 완성합니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Destinations Section -->
+    <section id="destinations">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="lang-en">Popular Destinations</span>
+                <span class="lang-kr">주요 목적지</span>
+            </h2>
+            
+            <div class="destination-grid">
+                <div class="destination-card">
+                    <h3 class="destination-name">Los Angeles</h3>
+                </div>
+                <div class="destination-card">
+                    <h3 class="destination-name">San Diego</h3>
+                </div>
+                <div class="destination-card">
+                    <h3 class="destination-name">Palm Springs</h3>
+                </div>
+                <div class="destination-card">
+                    <h3 class="destination-name">Las Vegas</h3>
+                </div>
+                <div class="destination-card">
+                    <h3 class="destination-name">Grand Canyon</h3>
+                </div>
+                <div class="destination-card">
+                    <h3 class="destination-name">Yosemite</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="lang-en">Pricing</span>
+                <span class="lang-kr">요금</span>
+            </h2>
+            
+            <p class="section-intro lang-en">
+                Our pricing reflects premium service quality and flexibility.
+                Rates vary by destination, duration, and customization.
+            </p>
+            <p class="section-intro lang-kr">
+                BBT USA의 요금은 서비스 종류, 시간, 거리, 맞춤 구성에 따라 달라집니다.
+            </p>
+
+            <div class="pricing-grid">
+                <!-- Airport Transfer -->
+                <div class="pricing-card">
+                    <h3 class="lang-en">Airport Transfer</h3>
+                    <h3 class="lang-kr">공항 이동</h3>
+                    <p class="lang-en">
+                        Beverly Hills ↔ LAX: <strong>from $220</strong><br>
+                        Santa Monica ↔ LAX: <strong>from $200</strong><br>
+                        Downtown LA ↔ LAX: <strong>from $210</strong>
+                    </p>
+                    <p class="lang-kr">
+                        베버리힐스 ↔ LAX: <strong>$220부터</strong><br>
+                        산타모니카 ↔ LAX: <strong>$200부터</strong><br>
+                        다운타운 LA ↔ LAX: <strong>$210부터</strong>
+                    </p>
+                    <p class="price-note lang-en">+ gratuity</p>
+                    <p class="price-note lang-kr">+ 팁</p>
+                    <a href="#contact" class="cta-button">
+                        <span class="lang-en">Request a Quote</span>
+                        <span class="lang-kr">견적 문의</span>
+                    </a>
+                </div>
+
+                <!-- 4-Hour Tour -->
+                <div class="pricing-card">
+                    <h3 class="lang-en">4-Hour Tour</h3>
+                    <h3 class="lang-kr">4시간 투어</h3>
+                    <div class="price">from $450</div>
+                    <p class="price-note lang-en">+ gratuity</p>
+                    <p class="price-note lang-kr">+ 팁</p>
+                    <a href="#contact" class="cta-button">
+                        <span class="lang-en">Request a Quote</span>
+                        <span class="lang-kr">견적 문의</span>
+                    </a>
+                </div>
+
+                <!-- 8-Hour Full Day -->
+                <div class="pricing-card">
+                    <h3 class="lang-en">8-Hour Full Day</h3>
+                    <h3 class="lang-kr">8시간 풀데이</h3>
+                    <div class="price">from $850</div>
+                    <p class="price-note lang-en">+ gratuity</p>
+                    <p class="price-note lang-kr">+ 팁</p>
+                    <a href="#contact" class="cta-button">
+                        <span class="lang-en">Request a Quote</span>
+                        <span class="lang-kr">견적 문의</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="quote-note">
+                <p class="lang-en">
+                    Multi-day trips, pilgrimage tours, cruises, and sports travel
+                    are priced individually via custom quote.
+                </p>
+                <p class="lang-kr">
+                    장거리 여행, 성지순례, 크루즈, 스포츠 투어는
+                    모두 개별 맞춤 견적으로 진행됩니다.
+                </p>
+            </div>
+
+            <!-- Included / Not Included -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 60px;">
+                <div class="pricing-card">
+                    <div class="included-list">
+                        <h4 class="lang-en">Included</h4>
+                        <h4 class="lang-kr">포함</h4>
+                        <ul>
+                            <li class="lang-en">Professional chauffeur</li>
+                            <li class="lang-kr">전문 기사</li>
+                            <li class="lang-en">TCP licensed & insured vehicle</li>
+                            <li class="lang-kr">주정부 허가 차량 및 보험</li>
+                            <li class="lang-en">Fuel & standard mileage</li>
+                            <li class="lang-kr">연료 및 기본 주행 거리</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="pricing-card">
+                    <div class="included-list not-included">
+                        <h4 class="lang-en">Not Included</h4>
+                        <h4 class="lang-kr">불포함</h4>
+                        <ul>
+                            <li class="lang-en">Gratuity</li>
+                            <li class="lang-kr">팁</li>
+                            <li class="lang-en">Parking, tolls</li>
+                            <li class="lang-kr">주차비, 톨비</li>
+                            <li class="lang-en">Overtime</li>
+                            <li class="lang-kr">예약 시간 초과 비용</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="lang-en">Frequently Asked Questions</span>
+                <span class="lang-kr">자주 묻는 질문</span>
+            </h2>
+
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span class="lang-en">How do I book a service?</span>
+                        <span class="lang-kr">예약은 어떻게 하나요?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p class="lang-en">Fill out the quote request form below or contact us directly via text or KakaoTalk. We will respond within 24 hours with a custom quote based on your needs.</p>
+                        <p class="lang-kr">하단의 견적 문의 양식을 작성하거나 문자 또는 카톡으로 직접 연락 주세요. 24시간 이내에 맞춤 견적으로 답변드립니다.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span class="lang-en">Is gratuity included?</span>
+                        <span class="lang-kr">팁이 포함되어 있나요?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p class="lang-en">No, gratuity is not included in the base rates. Standard gratuity is 15-20% of the total service cost.</p>
+                        <p class="lang-kr">팁은 기본 요금에 포함되어 있지 않습니다. 일반적으로 총 비용의 15-20%입니다.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span class="lang-en">What is the minimum booking time?</span>
+                        <span class="lang-kr">최소 예약 시간은 어떻게 되나요?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p class="lang-en">For hourly services, the minimum booking is 4 hours. Airport transfers have fixed routes and rates.</p>
+                        <p class="lang-kr">시간제 서비스는 최소 4시간부터 예약 가능합니다. 공항 이동은 고정 요금제입니다.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span class="lang-en">Do you provide service in Korean?</span>
+                        <span class="lang-kr">한국어 서비스가 가능한가요?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p class="lang-en">Yes, we provide full support in both English and Korean. Feel free to communicate in the language you're most comfortable with.</p>
+                        <p class="lang-kr">네, 영어와 한국어 모두 완벽하게 지원됩니다. 편하신 언어로 연락 주세요.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span class="lang-en">What is your cancellation policy?</span>
+                        <span class="lang-kr">취소 정책은 어떻게 되나요?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p class="lang-en">Cancellation policies vary by service type. Generally, cancellations made 24-48 hours in advance receive a full refund. Please inquire for specific details.</p>
+                        <p class="lang-kr">서비스 종류에 따라 다르며, 일반적으로 24-48시간 전 취소 시 전액 환불됩니다. 자세한 내용은 문의해 주세요.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="lang-en">Request a Quote</span>
+                <span class="lang-kr">견적 문의</span>
+            </h2>
+            
+            <p class="section-intro lang-en">
+                Please submit your request below. We respond within 24 hours.
+            </p>
+            <p class="section-intro lang-kr">
+                아래 양식을 작성해 주세요. 24시간 이내에 연락드립니다.
+            </p>
+
+            <form class="contact-form" action="https://docs.google.com/forms/d/e/1FAIpQLSdaiORP2QbYpX5go4-i6WAzbXQHwhN72LXwyjjbTK4xUgbrEA/formResponse" method="POST" target="hidden_iframe" onsubmit="handleSubmit(event)">
+                <input type="hidden" name="entry.1354773363" id="gf-name">
+                <input type="hidden" name="entry.75027791" id="gf-phone">
+                <input type="hidden" name="entry.678164684" id="gf-service">
+                <input type="hidden" name="entry.198626509" id="gf-date">
+                <input type="hidden" name="entry.989608045" id="gf-time">
+                <input type="hidden" name="entry.1092191112" id="gf-pickup">
+                <input type="hidden" name="entry.1220691329" id="gf-dropoff">
+                <input type="hidden" name="entry.1608828026" id="gf-passengers">
+                <input type="hidden" name="entry.1718542633" id="gf-message">
+                <div class="form-group">
+                    <label>
+                        <span class="lang-en">Name / 이름</span>
+                        <span class="lang-kr">이름 / Name</span>
+                    </label>
+                    <input type="text" name="name" id="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        <span class="lang-en">Phone · Kakao · WhatsApp</span>
+                        <span class="lang-kr">전화번호 · 카톡 · WhatsApp</span>
+                    </label>
+                    <input type="tel" name="phone" id="phone" required>
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        <span class="lang-en">Service Type / 서비스 종류</span>
+                        <span class="lang-kr">서비스 종류 / Service Type</span>
+                    </label>
+                    <select name="service" id="service" required>
+                        <option value="">-- Select / 선택 --</option>
+                        <option value="Airport Transfer / 공항 이동">Airport Transfer / 공항 이동</option>
+                        <option value="Day Tour / 일일 관광">Day Tour / 일일 관광</option>
+                        <option value="Multi-Day Trip / 장거리 여행">Multi-Day Trip / 장거리 여행</option>
+                        <option value="Pilgrimage / 성지순례">Pilgrimage / 성지순례</option>
+                        <option value="Cruise / 크루즈">Cruise / 크루즈</option>
+                        <option value="Sports Tour / 스포츠 투어">Sports Tour / 스포츠 투어</option>
+                        <option value="Custom / 맞춤 투어">Custom / 맞춤 투어</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        <span class="lang-en">Date / 날짜</span>
+                        <span class="lang-kr">날짜 / Date</span>
+                    </label>
+                    <input type="date" name="date" id="date" required>
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        <span class="lang-en">Time / 시간</span>
+                        <span class="lang-kr">시간 / Time</span>
+                    </label>
+                    <input type="time" id="time-input" name="time" required>
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        <span class="lang-en">Pickup Location / 픽업 장소</span>
+                        <span class="lang-kr">픽업 장소 / Pickup Location</span>
+                    </label>
+                    <input type="text" name="pickup" id="pickup" placeholder="Pickup (e.g., LAX)" required>
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        <span class="lang-en">Drop-off Location / 목적지</span>
+                        <span class="lang-kr">목적지 / Drop-off Location</span>
+                    </label>
+                    <input type="text" name="dropoff" id="dropoff" placeholder="Drop-off (e.g., Beverly Hills)" required>
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        <span class="lang-en">Number of Passengers / 인원</span>
+                        <span class="lang-kr">인원 / Number of Passengers</span>
+                    </label>
+                    <input type="number" name="passengers" id="passengers" min="1" max="20" required>
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        <span class="lang-en">Message / 요청사항</span>
+                        <span class="lang-kr">요청사항 / Message</span>
+                    </label>
+                    <textarea name="message" id="message" rows="5"></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    <span class="lang-en">Submit Request</span>
+                    <span class="lang-kr">견적 요청하기</span>
+                </button>
+            </form>
+
+            <p style="text-align: center; margin-top: 40px; color: var(--text-gray); font-size: 14px;">
+                <span class="lang-en">English & Korean support available.</span>
+                <span class="lang-kr">영어가 불편하셔도 괜찮습니다. 한국어 상담 가능합니다.</span>
+            </p>
+            <iframe name="hidden_iframe" style="display:none;"></iframe>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">BBT USA</div>
+            <p style="margin-bottom: 30px; color: var(--text-gray);">
+                <span class="lang-en">Premium Private Tours & Transportation</span>
+                <span class="lang-kr">프리미엄 프라이빗 투어 & 이동 서비스</span>
+            </p>
+            
+            <div class="footer-links">
+                <a href="#home">
+                    <span class="lang-en">Home</span>
+                    <span class="lang-kr">홈</span>
+                </a>
+                <a href="#services">
+                    <span class="lang-en">Services</span>
+                    <span class="lang-kr">서비스</span>
+                </a>
+                <a href="#destinations">
+                    <span class="lang-en">Destinations</span>
+                    <span class="lang-kr">목적지</span>
+                </a>
+                <a href="#pricing">
+                    <span class="lang-en">Pricing</span>
+                    <span class="lang-kr">요금</span>
+                </a>
+                <a href="#faq">FAQ</a>
+                <a href="#contact">
+                    <span class="lang-en">Contact</span>
+                    <span class="lang-kr">문의</span>
+                </a>
+            </div>
+
+            <div class="footer-note">
+                <p class="lang-en">
+                    Luxury is not speed — it's comfort, safety, and trust.
+                </p>
+                <p class="lang-kr">
+                    가격 비교보다 안전 · 신뢰 · 책임을 선택하세요.
+                </p>
+                <p style="margin-top: 20px;">© 2026 BBT USA. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Action Buttons -->
+    <div class="floating-buttons">
+        <a href="sms:+1234567890" class="float-btn text-btn" title="Text Us">
+            💬
+        </a>
+        <a href="https://open.kakao.com/your-link" class="float-btn kakao-btn" title="KakaoTalk">
+            💛
+        </a>
+    </div>
+
+    <script>
+        // Language Toggle
+        function toggleLanguage() {
+            const body = document.body;
+            body.classList.toggle('is-kr');
+            
+            // Save preference
+            const currentLang = body.classList.contains('is-kr') ? 'kr' : 'en';
+            localStorage.setItem('language', currentLang);
+        }
+
+        // Load saved language preference
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('language');
+            if (savedLang === 'kr') {
+                document.body.classList.add('is-kr');
+            }
+
+            const isFirefox = /firefox/i.test(navigator.userAgent);
+            const timeInput = document.getElementById('time-input');
+            if (isFirefox && timeInput) {
+                const timeSelect = document.createElement('select');
+                timeSelect.name = timeInput.name;
+                timeSelect.id = timeInput.id;
+                timeSelect.required = true;
+                timeSelect.className = timeInput.className;
+
+                const placeholderOption = document.createElement('option');
+                placeholderOption.value = '';
+                placeholderOption.textContent = 'Select time';
+                timeSelect.appendChild(placeholderOption);
+
+                for (let hour = 0; hour < 24; hour++) {
+                    for (let minutes = 0; minutes < 60; minutes += 15) {
+                        const option = document.createElement('option');
+                        const value = `${String(hour).padStart(2, '0')}:${String(minutes).padStart(2, '0')}`;
+
+                        const period = hour < 12 ? 'AM' : 'PM';
+                        const hour12 = hour % 12 === 0 ? 12 : hour % 12;
+                        const label = `${hour12}:${String(minutes).padStart(2, '0')} ${period}`;
+
+                        option.value = label;
+                        option.textContent = label;
+                        timeSelect.appendChild(option);
+                    }
+                }
+
+                timeInput.replaceWith(timeSelect);
+            }
+        });
+
+        // FAQ Toggle
+        function toggleFAQ(button) {
+            const faqItem = button.parentElement;
+            const isActive = faqItem.classList.contains('active');
+            
+            // Close all FAQs
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            // Open clicked FAQ if it wasn't active
+            if (!isActive) {
+                faqItem.classList.add('active');
+            }
+        }
+
+        // Form Submission
+        function handleSubmit(event) {
+            event.preventDefault();
+            const form = event.target;
+            const nameInput = document.getElementById('name');
+            const phoneInput = document.getElementById('phone');
+            const serviceSelect = document.getElementById('service');
+            const dateInput = document.getElementById('date');
+            const timeInput = document.getElementById('time-input');
+            const pickupInput = document.getElementById('pickup');
+            const dropoffInput = document.getElementById('dropoff');
+            const passengersInput = document.getElementById('passengers');
+            const messageInput = document.getElementById('message');
+
+            const formatTimeTo12Hour = (value) => {
+                const match = /^([01]\d|2[0-3]):([0-5]\d)$/.exec(value || '');
+                if (!match) {
+                    return value || '';
+                }
+                const hour24 = Number(match[1]);
+                const minutes = match[2];
+                const period = hour24 < 12 ? 'AM' : 'PM';
+                const hour12 = hour24 % 12 === 0 ? 12 : hour24 % 12;
+                return `${hour12}:${minutes} ${period}`;
+            };
+
+            document.getElementById('gf-name').value = String(nameInput?.value || '').trim();
+            document.getElementById('gf-phone').value = String(phoneInput?.value || '').trim();
+            document.getElementById('gf-service').value = String(serviceSelect?.options[serviceSelect.selectedIndex]?.text || '').trim();
+            document.getElementById('gf-date').value = String(dateInput?.value || '').trim();
+
+            const timeValue = String(timeInput?.value || '').trim();
+            document.getElementById('gf-time').value = formatTimeTo12Hour(timeValue);
+
+            document.getElementById('gf-pickup').value = String(pickupInput?.value || '').trim();
+            document.getElementById('gf-dropoff').value = String(dropoffInput?.value || '').trim();
+            document.getElementById('gf-passengers').value = String(passengersInput?.value || '').trim();
+            document.getElementById('gf-message').value = String(messageInput?.value || '').trim();
+
+            form.submit();
+
+            const isKorean = document.body.classList.contains('is-kr');
+            const message = isKorean 
+                ? 'BBT USA에 문의해 주셔서 감사합니다.\n요청 내용을 확인했으며, 24시간 이내에 연락드리겠습니다.\n급한 문의는 문자 또는 카톡으로 바로 연락 주세요.'
+                : 'Thank you for contacting BBT USA.\nWe have received your request and will respond within 24 hours.\nFor urgent assistance, please feel free to text or message us directly.';
+            
+            alert(message);
+            form.reset();
+        }
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerOffset = 80;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Mobile menu toggle (basic implementation)
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+            if (navLinks.style.display === 'flex') {
+                navLinks.style.position = 'absolute';
+                navLinks.style.top = '100%';
+                navLinks.style.left = '0';
+                navLinks.style.right = '0';
+                navLinks.style.backgroundColor = 'white';
+                navLinks.style.flexDirection = 'column';
+                navLinks.style.padding = '20px';
+                navLinks.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+            }
+        });
+    </script>
+</body>
+</html>
