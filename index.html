@@ -86,6 +86,12 @@
             text-decoration: none;
         }
 
+        .logo-img {
+            display: block;
+            height: 36px;
+            width: auto;
+        }
+
         .logo-subtitle {
             display: block;
             font-size: 11px;
@@ -212,6 +218,13 @@
             font-size: 32px;
             margin-bottom: 10px;
             color: var(--soft-gold);
+        }
+
+        .trust-icon-img {
+            width: 48px;
+            height: auto;
+            display: block;
+            margin-bottom: 10px;
         }
 
         .trust-item h4 {
@@ -718,6 +731,60 @@
             font-style: italic;
             line-height: 1.8;
         }
+
+        /* Submit Modal */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.55);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+        }
+
+        .modal-overlay.is-visible {
+            display: flex;
+        }
+
+        .modal-content {
+            background: var(--white);
+            border-radius: 10px;
+            padding: 28px 30px;
+            max-width: 520px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .modal-title {
+            font-size: 22px;
+            margin-bottom: 12px;
+            color: var(--primary-black);
+        }
+
+        .modal-message {
+            font-size: 15px;
+            color: var(--text-gray);
+            line-height: 1.7;
+            white-space: pre-line;
+            margin-bottom: 20px;
+        }
+
+        .modal-close-btn {
+            background-color: var(--soft-gold);
+            color: var(--white);
+            border: none;
+            padding: 10px 24px;
+            border-radius: 22px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .modal-close-btn:hover {
+            background-color: #B89858;
+        }
     </style>
 </head>
 <body>
@@ -725,8 +792,7 @@
     <header>
         <nav>
             <a href="#home" class="logo">
-                BBT USA
-                <span class="logo-subtitle">PREMIUM PRIVATE TOURS</span>
+                <img src="bbt-logo.png" alt="BBT USA" class="logo-img">
             </a>
             <ul class="nav-links">
                 <li><a href="#home" class="nav-link" data-en="Home" data-kr="홈">Home</a></li>
@@ -775,7 +841,7 @@
                     <h4 class="lang-kr">전문 기사 서비스</h4>
                 </div>
                 <div class="trust-item">
-                    <div class="trust-icon">🚙</div>
+                    <img src="2025-cadillac-escalade-black.webp" alt="Cadillac Escalade" class="trust-icon-img">
                     <h4 class="lang-en">Private SUV · Cadillac Escalade Available</h4>
                     <h4 class="lang-kr">프라이빗 SUV · 캐딜락 에스컬레이드 가능</h4>
                 </div>
@@ -987,6 +1053,7 @@
                 <input type="hidden" name="entry.1092191112" id="gf-pickup">
                 <input type="hidden" name="entry.1220691329" id="gf-dropoff">
                 <input type="hidden" name="entry.1608828026" id="gf-passengers">
+                <input type="hidden" name="entry.1603127802" id="gf-bags">
                 <input type="hidden" name="entry.1718542633" id="gf-message">
                 <div class="form-group">
                     <label>
@@ -1063,6 +1130,14 @@
 
                 <div class="form-group">
                     <label>
+                        <span class="lang-en">Number of Bags / 여행가방 개수</span>
+                        <span class="lang-kr">여행가방 개수 / Number of Bags</span>
+                    </label>
+                    <input type="number" name="bags" id="bags" min="0" max="30" required>
+                </div>
+
+                <div class="form-group">
+                    <label>
                         <span class="lang-en">Message / 요청사항</span>
                         <span class="lang-kr">요청사항 / Message</span>
                     </label>
@@ -1129,6 +1204,21 @@
         <a href="http://qr.kakao.com/talk/k7iMMA1rv.u8A1mfamCRBhWG2pQ-" class="float-btn kakao-btn" title="KakaoTalk">
             💛
         </a>
+    </div>
+
+    <!-- Submit Confirmation Modal -->
+    <div id="submit-modal" class="modal-overlay" aria-hidden="true">
+        <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="submit-modal-title">
+            <h3 id="submit-modal-title" class="modal-title">
+                <span class="lang-en">Request Submitted</span>
+                <span class="lang-kr">요청 완료</span>
+            </h3>
+            <p id="submit-modal-message" class="modal-message"></p>
+            <button type="button" id="submit-modal-close" class="modal-close-btn">
+                <span class="lang-en">OK</span>
+                <span class="lang-kr">확인</span>
+            </button>
+        </div>
     </div>
 
     <script>
@@ -1224,6 +1314,7 @@
             const pickupInput = document.getElementById('pickup');
             const dropoffInput = document.getElementById('dropoff');
             const passengersInput = document.getElementById('passengers');
+            const bagsInput = document.getElementById('bags');
             const messageInput = document.getElementById('message');
 
             const formatTimeTo12Hour = (value) => {
@@ -1249,6 +1340,7 @@
             document.getElementById('gf-pickup').value = String(pickupInput?.value || '').trim();
             document.getElementById('gf-dropoff').value = String(dropoffInput?.value || '').trim();
             document.getElementById('gf-passengers').value = String(passengersInput?.value || '').trim();
+            document.getElementById('gf-bags').value = String(bagsInput?.value || '').trim();
             document.getElementById('gf-message').value = String(messageInput?.value || '').trim();
 
             form.submit();
@@ -1259,9 +1351,37 @@
                 : 'Thank you for contacting BBT USA.\nWe have received your request and will respond within 24 hours.\nFor urgent assistance, please feel free to text or message us directly.';
 
             setTimeout(() => {
-                alert(message);
+                const modal = document.getElementById('submit-modal');
+                const modalMessage = document.getElementById('submit-modal-message');
+                if (modal && modalMessage) {
+                    modalMessage.textContent = message;
+                    modal.classList.add('is-visible');
+                    modal.setAttribute('aria-hidden', 'false');
+                }
                 form.reset();
             }, 0);
+        }
+
+        // Modal close handlers
+        const submitModal = document.getElementById('submit-modal');
+        const submitModalClose = document.getElementById('submit-modal-close');
+
+        const closeSubmitModal = () => {
+            if (!submitModal) return;
+            submitModal.classList.remove('is-visible');
+            submitModal.setAttribute('aria-hidden', 'true');
+        };
+
+        if (submitModalClose) {
+            submitModalClose.addEventListener('click', closeSubmitModal);
+        }
+
+        if (submitModal) {
+            submitModal.addEventListener('click', (event) => {
+                if (event.target === submitModal) {
+                    closeSubmitModal();
+                }
+            });
         }
 
         // Smooth scroll for navigation links
