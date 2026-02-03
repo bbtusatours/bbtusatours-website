@@ -1406,6 +1406,8 @@
         const navLinks = document.querySelector('.nav-links');
         const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
 
+        const isMobileView = () => window.matchMedia('(max-width: 767px)').matches;
+
         const openMobileMenu = () => {
             navLinks.style.display = 'flex';
             navLinks.style.position = 'absolute';
@@ -1433,14 +1435,14 @@
         });
 
         navLinks.addEventListener('click', function(event) {
-            if (event.target.closest('a')) {
+            if (isMobileView() && event.target.closest('a')) {
                 closeMobileMenu();
             }
         });
 
         document.addEventListener('click', function(event) {
             const clickedInsideNav = event.target.closest('nav');
-            if (!clickedInsideNav && navLinks.style.display === 'flex') {
+            if (isMobileView() && !clickedInsideNav && navLinks.style.display === 'flex') {
                 closeMobileMenu();
             }
         });
