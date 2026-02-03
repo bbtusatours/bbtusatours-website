@@ -1257,9 +1257,11 @@
             const message = isKorean 
                 ? 'BBT USA에 문의해 주셔서 감사합니다.\n요청 내용을 확인했으며, 24시간 이내에 연락드리겠습니다.\n급한 문의는 문자 또는 카톡으로 바로 연락 주세요.'
                 : 'Thank you for contacting BBT USA.\nWe have received your request and will respond within 24 hours.\nFor urgent assistance, please feel free to text or message us directly.';
-            
-            alert(message);
-            form.reset();
+
+            setTimeout(() => {
+                alert(message);
+                form.reset();
+            }, 0);
         }
 
         // Smooth scroll for navigation links
